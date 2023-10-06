@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*tira a borda das coisas*/
+}
+
+.container{
+    height: 100vh; /* ate onde a vista de altura alcança*/
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(./img/fundo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.flip{
+    background-color: transparent;
+    width: 300px;
+    height: 450px;
+
+    perspective: 1000px;
+}
+
+.carta{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.front, .back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    backface-visibility: hidden;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+
+    border-radius: 25px;
+}
+
+.horizontal:hover .carta {
+    transform: rotateY(180deg);
+}
+
+.horizontal .back{
+    transform: rotateY(180deg);
+
+}
